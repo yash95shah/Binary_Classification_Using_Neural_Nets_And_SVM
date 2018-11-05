@@ -1,15 +1,11 @@
-import numpy
-# import pandas
-import scipy.io as sio
-'''from keras.models import Sequential
-from keras.layers import Dense
-from keras.wrappers.scikit_learn import KerasClassifier
-from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import StratifiedKFold
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipelinec'''
+import numpy as np
+from sklearn.model_selection import train_test_split
+X = np.arange(18).reshape((6,3))
+#print X
+y =range (5)
+Atom = X[0:3,:]
+#print Atom
 
-cat_dc = sio.loadmat('dataset_DC.mat')
-cat_pto = sio.loadmat('dataset_PTO.mat')
-print cat_dc
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+print X_train
